@@ -1,0 +1,14 @@
+apache2
+apache2-utils
+php7
+php-curl
+php-mysql
+php-memcache
+php-dbase
+php-pdo
+php-pdo_mysql
+php-mbstring
+php-mcrypt
+php-mysqli
+php-openssl
+php-sockets
