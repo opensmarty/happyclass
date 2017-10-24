@@ -1,0 +1,23 @@
+{
+    "name": "opensmarty/laracore",
+    "description": "This is a core library for the laravel of framework.",
+    "keywords": ["laravel", "helper", "phpstorm", "netbeans", "sublime", "phpdoc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "opensmarty",
+            "email": "opensmarty@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenSmarty\\LaraCore\\": "src"
+        }
+    }
+}

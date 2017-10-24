@@ -1,12 +1,12 @@
 apache2
 apache2-utils
-php7
+php
 php-curl
 php-mysql
 php-memcache
-php-dbase
+php-redis
 php-pdo
-php-pdo_mysql
+php-mysql
 php-mbstring
 php-mcrypt
 php-mysqli

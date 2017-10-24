@@ -6,14 +6,50 @@
 #   HomePage: http://opensmarty.github.io
 # LastChange: 2017-10-13 21:05:13
 #========================================================================
+start=$(date +%s%N)
+start_ms=${start:0:16}
 
-
+# Console customed prompt color
 COLOR_GREEN="\033[0;32m"
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[1;33m"
 COLOR_REMOVE="\e[00m"
 BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# This is the application of name.
+APP="happyclass"
+DATE=`date +%y%m%d`
+
+# 更改项目权限.
+changeFileMod () {
+    # 初始化项目权限
+    for element in `ls $1`
+    do
+        file=$1/$element
+        if [ -d $file ]
+        then
+            echo $file 是目录
+            chmod 775 $file
+            changeFileMod $file
+        else
+            echo $file 是文件
+            fileinfo=`basename $file`
+            filename=${fileinfo%.*}
+            extension=${fileinfo##*.}
+            if [ $extension == "sh" ]
+            then
+                chmod 744 $file
+            else
+                chmod 644 $file
+            fi
+        fi
+    done
+}
+
+# handle string with sed.
+str_replace () {
+    sed -i 's/$1/$2/g' $3
+}
 
 # check if command exists
 haveCMD () {
@@ -105,6 +141,7 @@ then
     echo 'Error: lsb_release not detected, seems not a proper platform for this script'
     exit 1
 fi
+
 # Enviroment needed to be Ubuntu 16.04
 OS=$(lsb_release -si)
 VERSION=$(lsb_release -sr)

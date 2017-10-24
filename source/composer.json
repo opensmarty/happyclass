@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "happyclass",
+    "description": "The HappyClass System.",
+    "keywords": ["framework", "laravel", "happyclass"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -11,6 +11,7 @@
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.4",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
@@ -22,7 +23,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "OpenSmarty\\LaraCore\\":"packages/opensmarty/laracore/src/"
         }
     },
     "autoload-dev": {
