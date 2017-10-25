@@ -28,13 +28,16 @@ fi
 ECHO $COLOR_GREEN "Change [$re] file permissions: [ok]"
 
 # require dpkg packages list
-#for package in $(cat $BASE/packages.txt)
-#do
-#    requirePackage $package
-#done
+for package in $(cat $BASE/packages.txt)
+do
+    requirePackage $package
+done
 
 # deploy apache configure files
 deployFiles $BASE/configure/apache2/apache2.conf /etc/apache2/apache2.conf
+
+# deploy apache httpd configure files
+deployFiles $BASE/configure/apache2/httpd.conf /etc/apache2/httpd.conf
 
 # deploy apache site configure files
 deployFiles $BASE/configure/apache2/conf.d/$APP.conf /etc/apache2/conf.d/
@@ -49,10 +52,10 @@ deployFiles $BASE/configure/nginx/conf.d/$APP.conf /etc/nginx/conf.d/
 #deployFiles $BASE/configure/php7/conf.d/* /etc/php7/conf.d/
 
 # enable apache mods
-#for mod in $(cat ./configure/apache2/enable.txt)
-#do
-#    enableMod $mod
-#done
+for mod in $(cat ./configure/apache2/enable.txt)
+do
+    enableMod $mod
+done
 
 #str_replace "myhc" "myhappyclass" $BASE/configure/apache2/conf.d/$APP.conf
 #str_replace "myhc" "myhappyclass" $BASE/configure/nginx/conf.d/$APP.conf

@@ -86,6 +86,16 @@ havePackage () {
     fi
 }
 
+# Check php extend module
+haveModule () {
+    if (php -m)
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # enhanced echo
 ECHO () {
     echo -e $1$2$COLOR_REMOVE

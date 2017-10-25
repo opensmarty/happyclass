@@ -1,14 +1,12 @@
 apache2
 apache2-utils
+mysql-server
+mysql-client
 php
 php-curl
 php-mysql
 php-memcache
 php-redis
-php-pdo
 php-mysql
 php-mbstring
 php-mcrypt
-php-mysqli
-php-openssl
-php-sockets
