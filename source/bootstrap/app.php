@@ -1,4 +1,12 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Customize the application helpers.
+|--------------------------------------------------------------------------
+|
+| This script has many functions that will be used for the application.
+*/
+require __DIR__ . '/helpers.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -10,11 +18,6 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-
-/**
- * 扩展自定义函数.
- */
-require __DIR__ . '/helpers.php';
 
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
